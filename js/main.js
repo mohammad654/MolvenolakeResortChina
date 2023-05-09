@@ -1,3 +1,5 @@
+
+
 (function ($) {
     "use strict";
 
@@ -81,7 +83,7 @@
         $('.btn-play').click(function () {
             $videoSrc = $(this).data("src");
         });
-        console.log($videoSrc);
+        // console.log($videoSrc);
 
         $('#videoModal').on('shown.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
@@ -133,7 +135,7 @@ $(function() {
 });
 
     // Time 
-      const timeSelectionDiv = document.getElementById("timeSelection");
+    //   const timeSelectionDiv = document.getElementById("timeSelection");
 
         for (let hour = 7; hour <= 23; hour++) {
             for (let minute = 0; minute < 60; minute += 30) {
@@ -154,19 +156,11 @@ $(function() {
                         console.log("Selected Time:", selectedTime);
                     }
                 });
+         
+const timeSelectionDiv = document.getElementById("timeSelection");
+if (timeSelectionDiv) {
+  timeSelectionDiv.appendChild(timeBox);}
+              
 
-                timeSelectionDiv.appendChild(timeBox);
             }
         }
-        // Phone 
-         var input = document.querySelector("#phone");
-        var iti = window.intlTelInput(input, {
-            initialCountry: "auto",
-            separateDialCode: true,
-            nationalMode: false,
-            preferredCountries: ["us", "ca"],
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.min.js"
-        });
-        input.addEventListener("input", function () {
-            input.value = input.value.replace(/[^0-9]/g, "").slice(0, 12);
-        });
