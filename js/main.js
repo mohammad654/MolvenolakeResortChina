@@ -154,8 +154,10 @@ $(function() {
                         console.log("Selected Time:", selectedTime);
                     }
                 });
-
-                timeSelectionDiv.appendChild(timeBox);
+ if(timeSelectionDiv){
+      timeSelectionDiv.appendChild(timeBox);
+                }
+//                 timeSelectionDiv.appendChild(timeBox);
             }
         }
         // Phone 
